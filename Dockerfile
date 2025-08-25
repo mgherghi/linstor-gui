@@ -17,7 +17,9 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
 # Set default value for LB_GATEWAY_API_HOST
-ENV LB_GATEWAY_API_HOST=http://localhost:8080
+#ENV LB_GATEWAY_API_HOST=http://localhost:8080
+ENV LB_LINSTOR_API_HOST=http://localhost:337
+
 
 # Download the corresponding tarball
 RUN LATEST_TAG=$(git describe --tags --abbrev=0 | sed 's/^v//') && \
